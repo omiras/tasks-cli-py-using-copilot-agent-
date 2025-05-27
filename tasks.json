@@ -1,12 +1,12 @@
 [
   {
     "id": 1,
-    "description": "Cortar Pelo",
+    "description": "cortar pelo y barba",
     "done": false
   },
   {
     "id": 2,
     "description": "Recoger gato",
-    "done": false
+    "done": true
   }
 ]

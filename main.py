@@ -53,6 +53,17 @@ def delete_task(task_id):
     else:
         print("ID inválido.")
 
+def update_task(task_id, new_description):
+    tasks = load_tasks()
+    for task in tasks:
+        if task.get("id") == task_id:
+            task["description"] = new_description
+            save_tasks(tasks)
+            print("Tarea actualizada.")
+            break
+    else:
+        print("ID inválido.")
+
 # CLI
 parser = argparse.ArgumentParser(description="Gestor de tareas")
 subparsers = parser.add_subparsers(dest="command")
@@ -72,6 +83,11 @@ done_parser.add_argument("id", type=int, help="ID de la tarea")
 delete_parser = subparsers.add_parser("delete", help="Eliminar una tarea")
 delete_parser.add_argument("id", type=int, help="ID de la tarea")
 
+# Comando: update
+update_parser = subparsers.add_parser("update", help="Actualizar una tarea")
+update_parser.add_argument("id", type=int, help="ID de la tarea")
+update_parser.add_argument("description", help="Nueva descripción de la tarea")
+
 # Ejecutar
 args = parser.parse_args()
 
@@ -83,5 +99,7 @@ elif args.command == "done":
     complete_task(args.id)
 elif args.command == "delete":
     delete_task(args.id)
+elif args.command == "update":
+    update_task(args.id, args.description)
 else:
     parser.print_help()
