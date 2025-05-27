@@ -1,6 +1,7 @@
 # tasks-cli-py
 
 Gestor de tareas simple por línea de comandos en Python.
+Project idea taken from this [site](https://roadmap.sh/projects/task-tracker)
 
 ## Características
 - Añadir tareas con descripción
