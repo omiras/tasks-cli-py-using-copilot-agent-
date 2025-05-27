@@ -1,12 +1,9 @@
 [
   {
     "id": 1,
-    "description": "cortar pelo y barba",
-    "done": false
-  },
-  {
-    "id": 2,
-    "description": "Recoger gato",
-    "done": true
+    "description": "Buy groceries and cook dinner",
+    "status": "done",
+    "createdAt": "2025-05-27T15:37:40.289714",
+    "updatedAt": "2025-05-27T15:38:24.540657"
   }
 ]
